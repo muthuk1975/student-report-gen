@@ -14,3 +14,4 @@ if(isset($_REQUEST['term'])){
     }
     echo json_encode($output);
 }
+?>
