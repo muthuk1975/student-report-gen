@@ -1,14 +1,13 @@
 <?php
-if(isset($_REQUEST['term'])){
+if(isset($_REQUEST['sem'])){
     $con = mysqli_connect("localhost","root","","stu-project");
     $output = array();
-    $query = "SELECT * FROM `student_details` WHERE `regno` LIKE '%".$_REQUEST['term']."%'";
+    $query = "SELECT * FROM `sub_details` WHERE `bcode` = '".$_REQUEST['bcode']."' AND `sem` = '".$_REQUEST['sem']."'";
     $result = mysqli_query($con, $query);
     if($result){
         $i = 0;
         while($row = mysqli_fetch_assoc($result)){
             $output[$i] = $row;
-            $output[$i]['label'] = $row['regno'];
             $i++;
         }
     }

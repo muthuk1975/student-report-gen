@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.2.0
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 12, 2023 at 11:29 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- Generation Time: Feb 24, 2023 at 09:16 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 7.3.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,7 +32,7 @@ CREATE TABLE `login` (
   `user` text NOT NULL,
   `password` text NOT NULL,
   `type` varchar(15) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `login`
@@ -48,8 +48,9 @@ INSERT INTO `login` (`id`, `user`, `password`, `type`) VALUES
 --
 
 CREATE TABLE `mark_details` (
+  `id` int(11) NOT NULL,
   `regno` int(11) NOT NULL,
-  `sname` varchar(40) NOT NULL,
+  `stname` varchar(40) NOT NULL,
   `bcode` int(11) NOT NULL,
   `bname` varchar(40) NOT NULL,
   `sem` int(11) NOT NULL,
@@ -69,10 +70,12 @@ CREATE TABLE `mark_details` (
   `result` varchar(15) NOT NULL,
   `m_per` int(11) NOT NULL,
   `att_per` int(11) NOT NULL,
+  `att_date` text NOT NULL,
   `e_type` varchar(40) NOT NULL,
-  `month` int(11) NOT NULL,
-  `year` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `month` text NOT NULL,
+  `year` int(11) NOT NULL,
+  `remarks` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -82,7 +85,7 @@ CREATE TABLE `mark_details` (
 
 CREATE TABLE `student_details` (
   `regno` int(11) NOT NULL,
-  `sname` text NOT NULL,
+  `stname` text NOT NULL,
   `gender` varchar(15) NOT NULL,
   `bcode` int(11) NOT NULL,
   `bname` varchar(40) NOT NULL,
@@ -92,13 +95,13 @@ CREATE TABLE `student_details` (
   `stu_phone` bigint(20) NOT NULL,
   `p_name` varchar(40) NOT NULL,
   `p_phone` bigint(20) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `student_details`
 --
 
-INSERT INTO `student_details` (`regno`, `sname`, `gender`, `bcode`, `bname`, `add1`, `add2`, `add3`, `stu_phone`, `p_name`, `p_phone`) VALUES
+INSERT INTO `student_details` (`regno`, `stname`, `gender`, `bcode`, `bname`, `add1`, `add2`, `add3`, `stu_phone`, `p_name`, `p_phone`) VALUES
 (102, 'New User', 'Male', 1020, 'Mech', '125', 'Nehru St', 'Panruti', 9876543210, 'New Parent', 9876543210),
 (103, 'Mani', 'Male', 1052, 'CSE', '157', 'Nehru St', 'Neyveli', 9876543210, 'Math', 9876543210);
 
@@ -115,7 +118,7 @@ CREATE TABLE `sub_details` (
   `sem` int(11) NOT NULL,
   `year` int(11) NOT NULL,
   `scheme` varchar(10) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `sub_details`
@@ -139,8 +142,8 @@ ALTER TABLE `login`
 -- Indexes for table `mark_details`
 --
 ALTER TABLE `mark_details`
-  ADD PRIMARY KEY (`regno`),
-  ADD UNIQUE KEY `regno` (`regno`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `id` (`id`);
 
 --
 -- Indexes for table `student_details`
@@ -165,6 +168,12 @@ ALTER TABLE `sub_details`
 --
 ALTER TABLE `login`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT for table `mark_details`
+--
+ALTER TABLE `mark_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

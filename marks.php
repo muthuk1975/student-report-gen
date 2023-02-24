@@ -3,13 +3,13 @@ session_start();
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
 }else if(isset($_GET["deleteid"])){
-    $query = "DELETE FROM `student_details` WHERE `regno` = ".$_GET["deleteid"];
+    $query = "DELETE FROM `mark_details` WHERE `id` = ".$_GET["deleteid"];
     $con = mysqli_connect("localhost","root","","stu-project");
     mysqli_query($con, $query);
-    $selectQuery = "SELECT * FROM `student_details`";
+    $selectQuery = "SELECT * FROM `mark_details` WHERE `regno` = ".$_REQUEST['viewid'];
     $result = mysqli_query($con, $selectQuery);
 }else{
-    $query = "SELECT * FROM `student_details`";
+    $query = "SELECT * FROM `mark_details` WHERE `regno` = ".$_REQUEST['viewid'];
     $con = mysqli_connect("localhost","root","","stu-project");
     $result = mysqli_query($con, $query);
 }
@@ -21,7 +21,7 @@ if(!isset($_SESSION["user_id"])){
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Main Page</title>
+  <title>Marks</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
@@ -57,21 +57,30 @@ if(!isset($_SESSION["user_id"])){
           <div class="col">
             <div class="row">
               <div class="col-10">
-                <h1 class="title mb-3">View Students</h1>
+                <h1 class="title mb-3">View Marks</h1>
               </div>
-              <div class="col"><a class="btn btn-primary" href="add-student.php" role="button">Add Student</a></div>
+              <div class="col"><a class="btn btn-primary" href="add-mark.php" role="button">Add Mark</a></div>
             </div>
             <div class="table-responsive">
               <table class="table table-hover">
                 <thead>
                   <tr>
                     <th>Reg. No</th>
-                    <th>Name</th>
-                    <th>Branch</th>
-                    <th>Address</th>
-                    <th>Student Phone</th>
-                    <th>Parent Name</th>
-                    <th>Parent Phone</th>
+                    <th>Student Name</th>
+                    <th>Branch Code</th>
+                    <th>Branch Name</th>
+                    <th>Semester</th>
+                    <th>Exam Type</th>
+                    <th>Subject 1</th>
+                    <th>Subject 2</th>
+                    <th>Subject 3</th>
+                    <th>Subject 4</th>
+                    <th>Total</th>
+                    <th>Result</th>
+                    <th>Mark Percentage</th>
+                    <th>Attendance Percentage</th>
+                    <th>Month</th>
+                    <th>Year</th>
                     <th>Actions</th>
                   </tr>
                 </thead>
@@ -81,26 +90,41 @@ if(!isset($_SESSION["user_id"])){
                     if($rows===0){
                   ?>
                   <tr>
-                    <td colspan="8" align="center">No Records Found</td>
+                    <td colspan="17" align="center">No Records Found</td>
                   </tr>
                   <?php }else{
                     while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ ?>
                   <tr>
                     <td><?php echo $row["regno"]; ?></td>
-                    <td><a href="marks.php?viewid=<?php echo $row['regno']; ?>"><?php echo $row["stname"]; ?></a></td>
+                    <td><?php echo $row["stname"]; ?></td>
+                    <td><?php echo $row["bcode"]; ?></td>
                     <td><?php echo $row["bname"]; ?></td>
-                    <td><?php echo $row["add1"]; ?>, <?php echo $row["add2"]; ?>, <?php echo $row["add3"]; ?></td>
-                    <td><?php echo $row["stu_phone"]; ?></td>
-                    <td><?php echo $row["p_name"]; ?></td>
-                    <td><?php echo $row["p_phone"]; ?></td>
-                    <td>
-                      <a href="edit-student.php?id=<?php echo $row["regno"]; ?>">Edit</a> | <a
-                        href="?deleteid=<?php echo $row["regno"]; ?>">Delete</a>
+                    <td><?php echo $row["sem"]; ?></td>
+                    <td><?php echo $row["e_type"]; ?></td>
+                    <td><?php echo $row["subcode_1"]; ?> - <?php echo $row["sub_1"]; ?>:
+                      <strong><?php echo $row['mark_1'] ?></strong>
+                    </td>
+                    <td><?php echo $row["subcode_2"]; ?> - <?php echo $row["sub_2"]; ?>:
+                      <strong><?php echo $row['mark_2'] ?></strong>
+                    </td>
+                    <td><?php echo $row["subcode_3"]; ?> - <?php echo $row["sub_3"]; ?>:
+                      <strong><?php echo $row['mark_3'] ?></strong>
+                    </td>
+                    <td><?php echo $row["subcode_4"]; ?> - <?php echo $row["sub_4"]; ?>:
+                      <strong><?php echo $row['mark_4'] ?></strong>
+                    </td>
+                    <td><?php echo $row["total"]; ?></td>
+                    <td><?php echo $row["result"]; ?></td>
+                    <td><?php echo $row["m_per"]; ?></td>
+                    <td><?php echo $row["att_per"]; ?></td>
+                    <td><?php echo $row["month"]; ?></td>
+                    <td><?php echo $row["year"]; ?></td>
+                    <td><a href="?deleteid=<?php echo $row["id"]; ?>">Delete</a>
                     </td>
                   </tr>
                   <?php
-                  }
-                  } } ?>
+                    }
+                    } } ?>
                 </tbody>
               </table>
             </div>
