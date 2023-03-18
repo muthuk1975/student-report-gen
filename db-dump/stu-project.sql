@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2023 at 12:06 PM
+-- Generation Time: Mar 18, 2023 at 12:15 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -20,6 +20,17 @@ SET time_zone = "+00:00";
 --
 -- Database: `stu-project`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hall_details`
+--
+
+CREATE TABLE `hall_details` (
+  `id` int(11) NOT NULL,
+  `hall_name` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -134,6 +145,20 @@ INSERT INTO `mark_details` (`id`, `regno`, `stname`, `bcode`, `bname`, `sem`, `s
 (47, 21502408, 'ARJUN.B', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 23, 42, 37, -1, 147, 'PASS', 37, 89, '2023-03-15', 'IA1', 'January', 2023, 'good'),
 (48, 21502408, 'ARJUN.B', 1052, 'CSE', 1, 'Communicative English - I', 40011, 'Engineering Mathematics - I', 40012, 'Engineering Physics - I', 40013, 'Engineering Chemistry - I', 40014, 'Engineering Graphics - I', 40015, 25, 40, 37, 41, 28, 171, 'PASS', 34, 87, '2023-03-17', 'IA1', 'February', 2023, 'Good'),
 (49, 21502409, 'ARTHI.R', 1052, 'CSE', 2, 'Communicative English - II', 40021, 'Engineering Mathematics - II', 40022, 'Engineering Physics - II', 40023, 'Engineering Chemistry - II', 40024, 'Engineering Graphics - II', 40025, -1, 45, 56, 25, 25, 210, 'FAIL', 42, 87, '2023-03-17', 'Model', 'March', 2023, '');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `staff_details`
+--
+
+CREATE TABLE `staff_details` (
+  `id` int(11) NOT NULL,
+  `staff_id` text NOT NULL,
+  `staff_name` text NOT NULL,
+  `designation` text NOT NULL,
+  `subject` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -333,9 +358,30 @@ INSERT INTO `sub_details` (`id`, `scode`, `sname`, `bcode`, `sem`, `year`, `sche
 (111, 4052620, 'Computer Networks and Security', 1052, 6, 3, 'N'),
 (112, 4052632, 'Elective Theory-II - Multimedia Systems', 1052, 6, 3, 'N');
 
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `timetable_details`
+--
+
+CREATE TABLE `timetable_details` (
+  `id` int(11) NOT NULL,
+  `day` text NOT NULL,
+  `hour` int(11) NOT NULL,
+  `hall_name` text NOT NULL,
+  `staff_name` text NOT NULL,
+  `subject` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indexes for table `hall_details`
+--
+ALTER TABLE `hall_details`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `login`
@@ -351,6 +397,12 @@ ALTER TABLE `mark_details`
   ADD UNIQUE KEY `id` (`id`);
 
 --
+-- Indexes for table `staff_details`
+--
+ALTER TABLE `staff_details`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `student_details`
 --
 ALTER TABLE `student_details`
@@ -364,8 +416,20 @@ ALTER TABLE `sub_details`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `timetable_details`
+--
+ALTER TABLE `timetable_details`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT for dumped tables
 --
+
+--
+-- AUTO_INCREMENT for table `hall_details`
+--
+ALTER TABLE `hall_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -380,10 +444,22 @@ ALTER TABLE `mark_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 
 --
+-- AUTO_INCREMENT for table `staff_details`
+--
+ALTER TABLE `staff_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `sub_details`
 --
 ALTER TABLE `sub_details`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+
+--
+-- AUTO_INCREMENT for table `timetable_details`
+--
+ALTER TABLE `timetable_details`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
