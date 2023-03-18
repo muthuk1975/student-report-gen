@@ -1,4 +1,4 @@
-<div class="col-2 pt-3 h-100" style="background:#ddd;border-right:1px solid #222">
+<div class="col-2 pt-3 h-100 dontprint" style="background:#ddd;border-right:1px solid #222">
   <ul class="nav nav-pills flex-column">
     <li class="nav-item">
       <a href="mainpage.php" class="nav-link">
@@ -13,6 +13,11 @@
     <li class="nav-item">
       <a href="add-mark.php" class="nav-link">
         <i class="bi bi-plus-square"></i> Add Mark
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="result-analysis.php" class="nav-link">
+        <i class="bi bi-border-all"></i> Result Analysis
       </a>
     </li>
     <!-- <li class="nav-item">

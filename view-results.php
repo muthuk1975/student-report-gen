@@ -32,6 +32,11 @@ if(isset($_POST["regno"])){
     margin: 0;
     text-align: center;
   }
+  @media only print{
+    .dontprint{
+      display:none
+    }
+  }
   </style>
 </head>
 
@@ -251,9 +256,9 @@ if(isset($_POST["regno"])){
         <?php
       }
       } } ?>
-        <div class="row align-items-center justify-content-center">
+        <div class="row align-items-center justify-content-center dontprint">
           <div class="col-2">
-            <button onclick="window.print()">PRINT</button>
+            <button onclick="window.print()" class="btn btn-primary"><i class="bi bi-printer"></i> PRINT</button>
           </div>
         </div>
       </div>
