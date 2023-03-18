@@ -11,13 +11,13 @@ if(isset($_POST["username"])){
         $rows = mysqli_num_rows($result);
         if($rows!==0)
         {
-            while ($row = mysqli_fetch_row($result)) {
-                $_SESSION["user_id"] = $row[0];
-                header("Location: mainpage.php");
-            }
+          while ($row = mysqli_fetch_row($result)) {
+            $_SESSION["user_id"] = $row[0];
+            header("Location: mainpage.php");
+          }
         }
         else{
-            $errorMessage = "Username/Password doesn't match";
+          $errorMessage = "Username/Password doesn't match";
         }
     }
 }

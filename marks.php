@@ -75,6 +75,7 @@ if(!isset($_SESSION["user_id"])){
                     <th>Subject 2</th>
                     <th>Subject 3</th>
                     <th>Subject 4</th>
+                    <th>Subject 5</th>
                     <th>Total</th>
                     <th>Result</th>
                     <th>Mark Percentage</th>
@@ -102,16 +103,19 @@ if(!isset($_SESSION["user_id"])){
                     <td><?php echo $row["sem"]; ?></td>
                     <td><?php echo $row["e_type"]; ?></td>
                     <td><?php echo $row["subcode_1"]; ?> - <?php echo $row["sub_1"]; ?>:
-                      <strong><?php echo $row['mark_1'] ?></strong>
+                      <strong><?php if($row['mark_1'] == -1){echo "A"; }else{echo $row['mark_1'];} ?></strong>
                     </td>
                     <td><?php echo $row["subcode_2"]; ?> - <?php echo $row["sub_2"]; ?>:
-                      <strong><?php echo $row['mark_2'] ?></strong>
+                      <strong><?php if($row['mark_2'] == -1){echo "A"; }else{echo $row['mark_2'];} ?></strong>
                     </td>
                     <td><?php echo $row["subcode_3"]; ?> - <?php echo $row["sub_3"]; ?>:
-                      <strong><?php echo $row['mark_3'] ?></strong>
+                      <strong><?php if($row['mark_3'] == -1){echo "A"; }else{echo $row['mark_3'];} ?></strong>
                     </td>
                     <td><?php echo $row["subcode_4"]; ?> - <?php echo $row["sub_4"]; ?>:
-                      <strong><?php echo $row['mark_4'] ?></strong>
+                      <strong><?php if($row['mark_4'] == -1){echo "A"; }else{echo $row['mark_4'];} ?></strong>
+                    </td>
+                    <td><?php echo $row["subcode_5"]; ?> - <?php echo $row["sub_5"]; ?>:
+                      <strong><?php if($row['mark_5'] == -1){echo "A"; }else{echo $row['mark_5'];} ?></strong>
                     </td>
                     <td><?php echo $row["total"]; ?></td>
                     <td><?php echo $row["result"]; ?></td>

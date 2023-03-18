@@ -117,7 +117,15 @@ if(isset($_POST["regno"])){
                 <td><?php echo $row["subcode_1"]; ?></td>
                 <td><?php echo $row["sub_1"]; ?></td>
                 <td>
-                  <strong><?php echo $row['mark_1']; ?></strong>
+                  <strong>
+                    <?php if($row['mark_1'] < 30 && $row["e_type"] === "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_1'] < 20 && $row["e_type"] !== "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_1'] == -1){echo "<span style='color:red'>A</span>"; }else{echo $row['mark_1'];} ?>
+                    <?php if($row['mark_1'] < 30 && $row["e_type"] === "Model"){ ?></span><?php } ?>
+                    <?php if($row['mark_1'] < 20 && $row["e_type"] !== "Model"){ ?></span><?php } ?>
+                  </strong>
                 </td>
                 <td><?php if($row["e_type"]==="Model"){echo "75";}else{echo "50";} ?></td>
                 <td><strong><?php if($row['mark_1'] >= 30 && $row["e_type"] === "Model"){ ?><span
@@ -130,7 +138,15 @@ if(isset($_POST["regno"])){
                 <td><?php echo $row["subcode_2"]; ?></td>
                 <td><?php echo $row["sub_2"]; ?></td>
                 <td>
-                  <strong><?php echo $row['mark_2']; ?></strong>
+                  <strong>
+                    <?php if($row['mark_2'] < 30 && $row["e_type"] === "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_2'] < 20 && $row["e_type"] !== "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_2'] == -1){echo "<span style='color:red'>A</span>"; }else{echo $row['mark_2'];} ?>
+                    <?php if($row['mark_2'] < 30 && $row["e_type"] === "Model"){ ?></span><?php } ?>
+                    <?php if($row['mark_2'] < 20 && $row["e_type"] !== "Model"){ ?></span><?php } ?>
+                  </strong>
                 </td>
                 <td><?php if($row["e_type"]==="Model"){echo "75";}else{echo "50";} ?></td>
                 <td><strong><?php if($row['mark_2'] >= 30 && $row["e_type"] === "Model"){ ?><span
@@ -143,7 +159,15 @@ if(isset($_POST["regno"])){
                 <td><?php echo $row["subcode_3"]; ?></td>
                 <td><?php echo $row["sub_3"]; ?></td>
                 <td>
-                  <strong><?php echo $row['mark_3']; ?></strong>
+                <strong>
+                    <?php if($row['mark_3'] < 30 && $row["e_type"] === "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_3'] < 20 && $row["e_type"] !== "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_3'] == -1){echo "<span style='color:red'>A</span>"; }else{echo $row['mark_3'];} ?>
+                    <?php if($row['mark_3'] < 30 && $row["e_type"] === "Model"){ ?></span><?php } ?>
+                    <?php if($row['mark_3'] < 20 && $row["e_type"] !== "Model"){ ?></span><?php } ?>
+                  </strong>
                 </td>
                 <td><?php if($row["e_type"]==="Model"){echo "75";}else{echo "50";} ?></td>
                 <td><strong><?php if($row['mark_3'] >= 30 && $row["e_type"] === "Model"){ ?><span
@@ -157,11 +181,42 @@ if(isset($_POST["regno"])){
                 <td><?php echo $row["subcode_4"]; ?></td>
                 <td><?php echo $row["sub_4"]; ?></td>
                 <td>
-                  <strong><?php echo $row['mark_4']; ?></strong>
+                  <strong>
+                    <?php if($row['mark_4'] < 30 && $row["e_type"] === "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_4'] < 20 && $row["e_type"] !== "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_4'] == -1){echo "<span style='color:red'>A</span>"; }else{echo $row['mark_4'];} ?>
+                    <?php if($row['mark_4'] < 30 && $row["e_type"] === "Model"){ ?></span><?php } ?>
+                    <?php if($row['mark_4'] < 20 && $row["e_type"] !== "Model"){ ?></span><?php } ?>
+                  </strong>
                 </td>
                 <td><?php if($row["e_type"]==="Model"){echo "75";}else{echo "50";} ?></td>
                 <td><strong><?php if($row['mark_4'] >= 30 && $row["e_type"] === "Model"){ ?><span
                       style="color:green">Pass</span><?php } else if($row['mark_4'] >= 20 && $row["e_type"] !== "Model"){ ?><span
+                      style="color:green">Pass</span><?php } else{ ?><span
+                      style="color:red">Fail</span><?php } ?></strong></td>
+              </tr>
+              <?php } ?>
+              <?php if($row['mark_5']){ ?>
+              <tr>
+                <td>5</td>
+                <td><?php echo $row["subcode_5"]; ?></td>
+                <td><?php echo $row["sub_5"]; ?></td>
+                <td>
+                  <strong>
+                    <?php if($row['mark_5'] < 30 && $row["e_type"] === "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_5'] < 20 && $row["e_type"] !== "Model"){ ?><span
+                      style="color:red"><?php } ?>
+                    <?php if($row['mark_5'] == -1){echo "<span style='color:red'>A</span>"; }else{echo $row['mark_5'];} ?>
+                    <?php if($row['mark_5'] < 30 && $row["e_type"] === "Model"){ ?></span><?php } ?>
+                    <?php if($row['mark_5'] < 20 && $row["e_type"] !== "Model"){ ?></span><?php } ?>
+                  </strong>
+                </td>
+                <td><?php if($row["e_type"]==="Model"){echo "75";}else{echo "50";} ?></td>
+                <td><strong><?php if($row['mark_5'] >= 30 && $row["e_type"] === "Model"){ ?><span
+                      style="color:green">Pass</span><?php } else if($row['mark_5'] >= 20 && $row["e_type"] !== "Model"){ ?><span
                       style="color:green">Pass</span><?php } else{ ?><span
                       style="color:red">Fail</span><?php } ?></strong></td>
               </tr>
