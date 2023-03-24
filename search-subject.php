@@ -1,4 +1,5 @@
 <?php
+require("config.php");
 if(isset($_REQUEST['sem'])){
     $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
     $output = array();

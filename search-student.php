@@ -1,4 +1,5 @@
 <?php
+require("config.php");
 if(isset($_REQUEST['term'])){
     $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
     $query = "SELECT * FROM `student_details` WHERE regno LIKE '%".$_REQUEST['term']."%'";
