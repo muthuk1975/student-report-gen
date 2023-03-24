@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2023 at 12:15 PM
+-- Generation Time: Mar 24, 2023 at 11:55 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.0.25
 
@@ -31,6 +31,15 @@ CREATE TABLE `hall_details` (
   `id` int(11) NOT NULL,
   `hall_name` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `hall_details`
+--
+
+INSERT INTO `hall_details` (`id`, `hall_name`) VALUES
+(1, 'LH1'),
+(2, 'LH2'),
+(3, 'LH3');
 
 -- --------------------------------------------------------
 
@@ -144,7 +153,16 @@ INSERT INTO `mark_details` (`id`, `regno`, `stname`, `bcode`, `bname`, `sem`, `s
 (46, 21502409, 'ARTHI.R', 1052, 'CSE', 6, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 34, 47, 40, 0, 166, 'FAIL', 0, 89, '2023-03-21', '', '', 0, 'good'),
 (47, 21502408, 'ARJUN.B', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 23, 42, 37, -1, 147, 'PASS', 37, 89, '2023-03-15', 'IA1', 'January', 2023, 'good'),
 (48, 21502408, 'ARJUN.B', 1052, 'CSE', 1, 'Communicative English - I', 40011, 'Engineering Mathematics - I', 40012, 'Engineering Physics - I', 40013, 'Engineering Chemistry - I', 40014, 'Engineering Graphics - I', 40015, 25, 40, 37, 41, 28, 171, 'PASS', 34, 87, '2023-03-17', 'IA1', 'February', 2023, 'Good'),
-(49, 21502409, 'ARTHI.R', 1052, 'CSE', 2, 'Communicative English - II', 40021, 'Engineering Mathematics - II', 40022, 'Engineering Physics - II', 40023, 'Engineering Chemistry - II', 40024, 'Engineering Graphics - II', 40025, -1, 45, 56, 25, 25, 210, 'FAIL', 42, 87, '2023-03-17', 'Model', 'March', 2023, '');
+(49, 21502409, 'ARTHI.R', 1052, 'CSE', 2, 'Communicative English - II', 40021, 'Engineering Mathematics - II', 40022, 'Engineering Physics - II', 40023, 'Engineering Chemistry - II', 40024, 'Engineering Graphics - II', 40025, -1, 45, 56, 25, 25, 210, 'FAIL', 42, 87, '2023-03-17', 'Model', 'March', 2023, ''),
+(50, 21502409, 'ARTHI.R', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, '', 0, '', 0, 45, 49, 46, -1, -1, 140, 'FAIL', 0, 95, '2023-03-01', '', '', 0, 'Good'),
+(51, 21502409, 'ARTHI.R', 1052, 'CSE', 5, 'Python Programming', 4052510, 'Cloud Computing and Internet of Things', 4052520, 'Elective Theory-I -Component Based Techn', 4052531, '', 0, '', 0, 24, 46, 49, -1, -1, 119, 'FAIL', 0, 89, '2023-03-13', '', '', 0, 'Good'),
+(52, 21502409, 'ARTHI.R', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 46, 49, 46, -1, 186, 'FAIL', 37, 96, '2022-02-06', 'IA1', 'January', 2022, 'Good'),
+(53, 21502409, 'ARTHI.R', 1052, 'CSE', 3, 'Basics of Electrical and Electronics Eng', 4052310, 'Operating System', 4052320, 'C Programming and Data structures', 4052330, '', 0, '', 0, 45, 46, 42, -1, -1, 133, 'FAIL', 27, 89, '2022-08-02', 'IA1', 'August', 2022, 'Good'),
+(54, 21502409, 'ARTHI.R', 1052, 'CSE', 5, 'Python Programming', 4052510, 'Cloud Computing and Internet of Things', 4052520, 'Elective Theory-I -Component Based Techn', 4052531, '', 0, '', 0, 45, 46, 49, -1, -1, 140, 'FAIL', 28, 89, '2023-03-06', 'IA1', 'August', 2022, 'good'),
+(55, 21502409, 'ARTHI.R', 1052, 'CSE', 5, 'Python Programming', 4052510, 'Cloud Computing and Internet of Things', 4052520, 'Elective Theory-I -Component Based Techn', 4052531, '', 0, '', 0, 25, 23, 24, -1, -1, 72, 'FAIL', 14, 88, '2023-03-08', 'IA1', 'August', 2022, 'good'),
+(56, 21502415, 'JOTHI.K', 1052, 'CSE', 3, 'Basics of Electrical and Electronics Eng', 4052310, 'Operating System', 4052320, 'C Programming and Data structures', 4052330, '', 0, '', 0, 34, 45, 46, -1, -1, 125, 'FAIL', 25, 98, '2023-03-08', 'IA1', 'August', 2023, 'good'),
+(57, 21502415, 'JOTHI.K', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 12, 45, 23, 46, -1, 126, 'FAIL', 25, 78, '2023-03-06', 'IA1', 'February', 2022, 'good'),
+(60, 21502408, 'ARJUN.B', 1052, 'CSE', 3, 'Basics of Electrical and Electronics Eng', 4052310, 'Operating System', 4052320, 'C Programming and Data structures', 4052330, '', 0, '', 0, 23, 23, 25, 0, 0, 71, 'PASS', 24, 25, '2023-03-24', 'IA1', 'March', 2023, '');
 
 -- --------------------------------------------------------
 
@@ -157,8 +175,17 @@ CREATE TABLE `staff_details` (
   `staff_id` text NOT NULL,
   `staff_name` text NOT NULL,
   `designation` text NOT NULL,
+  `bcode` int(11) NOT NULL,
   `subject` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `staff_details`
+--
+
+INSERT INTO `staff_details` (`id`, `staff_id`, `staff_name`, `designation`, `bcode`, `subject`) VALUES
+(1, '101', 'Staff1', 'Lecturer', 1052, '[{\"scode\":\"4052410\",\"sname\":\"Computer Architecture\",\"bcode\":\"1052\",\"sem\":\"4\",\"year\":\"2\",\"scheme\":\"N\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"}]'),
+(2, '102', 'Staff2', 'HOD', 1052, '[{\"scode\":\"4052430\",\"sname\":\"Object Oriented Programming with Java\",\"bcode\":\"1052\",\"sem\":\"4\",\"year\":\"2\",\"scheme\":\"N\"},{\"scode\":\"4052620\",\"sname\":\"Computer Networks and Security\",\"bcode\":\"1052\",\"sem\":\"6\",\"year\":\"3\",\"scheme\":\"N\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"}]');
 
 -- --------------------------------------------------------
 
@@ -370,8 +397,24 @@ CREATE TABLE `timetable_details` (
   `hour` int(11) NOT NULL,
   `hall_name` text NOT NULL,
   `staff_name` text NOT NULL,
-  `subject` text NOT NULL
+  `subject` text NOT NULL,
+  `bcode` int(11) NOT NULL,
+  `sem` int(11) NOT NULL,
+  `year` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `timetable_details`
+--
+
+INSERT INTO `timetable_details` (`id`, `day`, `hour`, `hall_name`, `staff_name`, `subject`, `bcode`, `sem`, `year`) VALUES
+(1, 'Monday', 1, 'LH1', 'Staff1', '4052410', 1052, 1, 2023),
+(2, 'Monday', 2, 'LH1', 'Staff1', '4052410', 1052, 1, 2023),
+(3, 'Monday', 3, 'LH1', 'Staff2', '4052430', 1052, 1, 2023),
+(4, 'Monday', 4, 'LH1', 'Staff2', '4052430', 1052, 1, 2023),
+(5, 'Monday', 5, 'LH1', 'Staff2', '4052620', 1052, 1, 2023),
+(6, 'Monday', 6, 'LH1', 'Staff2', '4052620', 1052, 1, 2023),
+(7, 'Monday', 7, 'LH1', 'Staff2', '4052620', 1052, 1, 2023);
 
 --
 -- Indexes for dumped tables
@@ -429,7 +472,7 @@ ALTER TABLE `timetable_details`
 -- AUTO_INCREMENT for table `hall_details`
 --
 ALTER TABLE `hall_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `login`
@@ -441,13 +484,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `mark_details`
 --
 ALTER TABLE `mark_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
 
 --
 -- AUTO_INCREMENT for table `staff_details`
 --
 ALTER TABLE `staff_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `sub_details`
@@ -459,7 +502,7 @@ ALTER TABLE `sub_details`
 -- AUTO_INCREMENT for table `timetable_details`
 --
 ALTER TABLE `timetable_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
