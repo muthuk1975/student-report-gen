@@ -10,7 +10,7 @@ else{
   $result = mysqli_query($con, $query);
 }
 if(isset($_POST['regno'])){
-  if(isset($_POST['mark_1'])){
+  if(isset($_POST['subcode_1'])){
     if($_POST['mark_1'] >= 0){
       $mark1 = $_POST['mark_1'];
       $sub1 = $_POST['sub_1'];
@@ -25,7 +25,7 @@ if(isset($_POST['regno'])){
     $sub1 = "";
     $subcode1 = "";
   }
-  if(isset($_POST['mark_2'])){
+  if(isset($_POST['subcode_2'])){
     if($_POST['mark_2'] >= 0){
       $mark2 = $_POST['mark_2'];
       $sub2 = $_POST['sub_2'];
@@ -40,7 +40,7 @@ if(isset($_POST['regno'])){
     $sub2 = "";
     $subcode2 = "";
   }
-  if(isset($_POST['mark_3'])){
+  if(isset($_POST['subcode_3'])){
     if($_POST['mark_3'] >= 0){
       $mark3 = $_POST['mark_3'];
       $sub3 = $_POST['sub_3'];
@@ -55,7 +55,7 @@ if(isset($_POST['regno'])){
     $sub3 = "";
     $subcode3 = "";
   }
-  if(isset($_POST['mark_4'])){
+  if(isset($_POST['subcode_4']) && $_POST['subcode_4'] !== ""){
     if($_POST['mark_4'] >= 0){
       $mark4 = $_POST['mark_4'];
       $sub4 = $_POST['sub_4'];
@@ -70,7 +70,7 @@ if(isset($_POST['regno'])){
     $sub4 = "";
     $subcode4 = "";
   }
-  if(isset($_POST['mark_5'])){
+  if(isset($_POST['subcode_5']) && $_POST['subcode_5'] !== ""){
     if($_POST['mark_5'] >= 0){
       $mark5 = $_POST['mark_5'];
       $sub5 = $_POST['sub_5'];
@@ -88,12 +88,12 @@ if(isset($_POST['regno'])){
   $total = ($mark1 >=0 ? $mark1 : 0) + ($mark2 >=0 ? $mark2 : 0) + ($mark3 >=0 ? $mark3 : 0) + ($mark4 >=0 ? $mark4 : 0) + ($mark5 >=0 ? $mark5 : 0);
   $result = "FAIL";
   if($_POST['e_type'] === "Model"){
-    if(isset($_POST['mark_5'])){
+    if(isset($_POST['subcode_5']) && $_POST['subcode_5'] !== ""){
       if($_POST['mark_1'] >= 30 && $_POST['mark_2'] >= 30 && $_POST['mark_3'] >= 30 && $_POST['mark_4'] >= 30 && $_POST['mark_5'] >= 30){
         $result = "PASS";
       }
       $markPercentage = $total / 5;
-    }else if(isset($_POST['mark_4'])){
+    }else if(isset($_POST['subcode_4']) && $_POST['subcode_4'] !== ""){
       if($_POST['mark_1'] >= 30 && $_POST['mark_2'] >= 30 && $_POST['mark_3'] >= 30 && $_POST['mark_4'] >= 30){
         $result = "PASS";
       }
@@ -105,12 +105,12 @@ if(isset($_POST['regno'])){
       $markPercentage = $total / 3;
     }      
   }else if($_POST['e_type'] === "IA1" || $_POST['e_type'] === "IA2"){
-    if(isset($_POST['mark_5'])){
+    if(isset($_POST['subcode_5']) && $_POST['subcode_5'] !== ""){
       if($_POST['mark_1'] >= 20 && $_POST['mark_2'] >= 20 && $_POST['mark_3'] >= 20 && $_POST['mark_4'] >= 20 && $_POST['mark_5'] >= 20){
         $result = "PASS";
       }
       $markPercentage = $total / 5;
-    }else if(isset($_POST['mark_4'])){
+    }else if(isset($_POST['subcode_4']) && $_POST['subcode_4'] !== ""){
       if($_POST['mark_1'] >= 20 && $_POST['mark_2'] >= 20 && $_POST['mark_3'] >= 20 && $_POST['mark_4'] >= 20){
         $result = "PASS";
       }

@@ -231,7 +231,26 @@ if(isset($_POST["regno"])){
               <tr>
                 <th colspan="3">Total</th>
                 <th><?php echo $row["total"]; ?></th>
-                <th><?php if($row["e_type"]==="Model"){echo "300";}else{echo "200";} ?></th>
+                <th>
+                  <?php 
+                  if($row["e_type"]==="Model"){
+                    if($row["subcode_5"]!=0){
+                      echo "375";
+                    }else if($row["subcode_4"]!=0){
+                      echo "300";
+                    }else{
+                      echo "225";
+                    }
+                  }else{
+                    if($row["subcode_5"]!=0){
+                      echo "250";
+                    }else if($row["subcode_4"]!=0){
+                      echo "200";
+                    }else{
+                      echo "150";
+                    }
+                  } ?>
+                  </th>
                 <th><span
                     style="color:<?php if($row["result"]==="PASS"){echo "green";}else{echo "red";} ?>"><?php echo $row["result"]; ?></span>
                 </th>
