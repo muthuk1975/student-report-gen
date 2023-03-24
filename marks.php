@@ -1,16 +1,17 @@
 <?php
 session_start();
+require("config.php");
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
 }else if(isset($_GET["deleteid"])){
     $query = "DELETE FROM `mark_details` WHERE `id` = ".$_GET["deleteid"];
-    $con = mysqli_connect("localhost","root","","stu-project");
+    $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
     mysqli_query($con, $query);
     $selectQuery = "SELECT * FROM `mark_details` WHERE `regno` = ".$_REQUEST['viewid'];
     $result = mysqli_query($con, $selectQuery);
 }else{
     $query = "SELECT * FROM `mark_details` WHERE `regno` = ".$_REQUEST['viewid'];
-    $con = mysqli_connect("localhost","root","","stu-project");
+    $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
     $result = mysqli_query($con, $query);
 }
 ?>

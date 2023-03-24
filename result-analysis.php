@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("config.php");
 $successMessage = "";
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
@@ -17,7 +18,7 @@ if(!isset($_SESSION["user_id"])){
       $type3 = "6";
   }
   $overallQuery = "SELECT (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `sem` = ".$type1." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) total_students_1, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `result` = 'PASS' AND `sem` = ".$type1." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) as passed_students_1, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `result` = 'FAIL' AND `sem` = ".$type1." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) as failed_students_1, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `sem` = ".$type2." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) total_students_2, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `result` = 'PASS' AND `sem` = ".$type2." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) as passed_students_2, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `result` = 'FAIL' AND `sem` = ".$type2." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) as failed_students_2, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `sem` = ".$type3." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) total_students_3, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `result` = 'PASS' AND `sem` = ".$type3." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) as passed_students_3, (SELECT count(*) FROM `mark_details` WHERE `year` = ".$period." AND `result` = 'FAIL' AND `sem` = ".$type3." AND `e_type` = '".$_REQUEST['e_type']."' AND `bcode` = md.bcode) as failed_students_3, `bcode` FROM `mark_details` md GROUP BY `bcode`;";
-  $con = mysqli_connect("localhost","root","","stu-project");
+  $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
   $result = mysqli_query($con, $overallQuery);
 }
 ?>

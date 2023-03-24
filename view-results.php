@@ -1,7 +1,7 @@
 <?php
 if(isset($_POST["regno"])){
     $query = "SELECT * FROM `mark_details` WHERE `regno` = '".$_POST["regno"]."' AND `sem` = '".$_POST['sem']."' AND `e_type` = '".$_POST['e_type']."' AND `year` = '".$_POST['year']."'";
-    $con = mysqli_connect("localhost","root","","stu-project");
+    $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
     $result = mysqli_query($con, $query);
 }
 ?>

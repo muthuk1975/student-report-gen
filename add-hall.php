@@ -1,12 +1,13 @@
 <?php
 session_start();
+require("config.php");
 $successMessage = "";
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
 }
 if(isset($_POST['hall_name'])){
     $query = "INSERT INTO `hall_details`(`hall_name`) VALUES ('".$_POST['hall_name']."')";
-    $con = mysqli_connect("localhost","root","","stu-project");
+    $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
     mysqli_query($con, $query);
     $successMessage = "Record Added";
 }

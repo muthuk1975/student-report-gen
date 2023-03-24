@@ -1,12 +1,13 @@
 <?php
 session_start();
+require("config.php");
 $successMessage = "";
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
 }
 else{
   $query = "SELECT * FROM `student_details`";
-  $con = mysqli_connect("localhost","root","","stu-project");
+  $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
   $result = mysqli_query($con, $query);
 }
 if(isset($_POST['regno'])){
@@ -124,7 +125,7 @@ if(isset($_POST['regno'])){
   }
   $query = "INSERT INTO `mark_details`(`regno`, `stname`, `bcode`, `bname`, `sem`, `sub_1`, `subcode_1`, `sub_2`, `subcode_2`, `sub_3`, `subcode_3`, `sub_4`, `subcode_4`, `sub_5`, `subcode_5`, `mark_1`, `mark_2`, `mark_3`, `mark_4`, `mark_5`, `total`, `result`, `m_per`, `att_per`, `att_date`, `e_type`, `month`, `year`, `remarks`) VALUES ('".$_POST['regno']."','".$_POST['sname']."','".$_POST['bcode']."','".$_POST['bname']."','".$_POST['sem']."','".$sub1."','".$subcode1."','".$sub2."','".$subcode2."','".$sub3."','".$subcode3."','".$sub4."','".$subcode4."','".$sub5."','".$subcode5."','".$mark1."','".$mark2."','".$mark3."','".$mark4."','".$mark5."','".$total."','".$result."','".$markPercentage."','".$_POST['att_per']."','".$_POST['att_date']."','".$_POST['e_type']."','".$_POST['month']."','".$_POST['year']."', '".$_POST['remarks']."')";
 
-  $con = mysqli_connect("localhost","root","","stu-project");
+  $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
   mysqli_query($con, $query);
   $successMessage = "Record Added";
 }

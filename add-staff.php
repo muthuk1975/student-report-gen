@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("config.php");
 $successMessage = "";
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
@@ -40,7 +41,7 @@ if(isset($_POST['staff_id'])){
     ),
   );
   $query = "INSERT INTO `staff_details`(`staff_id`, `staff_name`, `designation`, `bcode`, `subject`) VALUES ('".$_POST['staff_id']."','".$_POST['staff_name']."','".$_POST['designation']."','".$_POST['bcode']."','".json_encode($subject)."')";
-  $con = mysqli_connect("localhost","root","","stu-project");
+  $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
   mysqli_query($con, $query);
   $successMessage = "Record Added";
 }

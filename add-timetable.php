@@ -1,10 +1,11 @@
 <?php
 session_start();
+require("config.php");
 $successMessage = "";
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
 }
-$con = mysqli_connect("localhost","root","","stu-project");
+$con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
 $hallQuery = "SELECT * FROM `hall_details`";
 $hallResult = mysqli_query($con,$hallQuery);
 $staffQuery = "SELECT * FROM `staff_details`";

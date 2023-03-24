@@ -5,7 +5,7 @@ if(isset($_SESSION["user_id"])){
     header("Location: mainpage.php");
 }
 if(isset($_POST["username"])){
-    $con = mysqli_connect("localhost","root","","stu-project");
+    $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
     $result = mysqli_query($con, "SELECT `id` FROM `login` WHERE `user` = '".$_POST["username"]."' AND `password` = '".md5($_POST["password"])."' AND `type` = 'admin'");
     if($result){
         $rows = mysqli_num_rows($result);
