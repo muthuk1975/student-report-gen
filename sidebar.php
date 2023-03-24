@@ -20,6 +20,16 @@
         <i class="bi bi-border-all"></i> Result Analysis
       </a>
     </li>
+    <li class="nav-item">
+      <a href="halls.php" class="nav-link">
+        <i class="bi bi-bricks"></i> Halls
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="staffs.php" class="nav-link">
+      <i class="bi bi-person-badge"></i> Staffs
+      </a>
+    </li>
     <!-- <li class="nav-item">
       <a href="create-user.php" class="nav-link">
         <i class="bi bi-person-plus"></i> Create User
