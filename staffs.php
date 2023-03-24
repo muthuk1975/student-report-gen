@@ -88,7 +88,9 @@ if(!isset($_SESSION["user_id"])){
                     <td><?php echo $row["staff_name"]; ?></td>
                     <td><?php echo $row["designation"]; ?></td>
                     <td><?php
-                    foreach(json_decode($row["subject"], true) as $subject){echo $subject['sname']; } ?></td>
+                    $len = count(json_decode($row["subject"], true));
+                    $i = 1;
+                    foreach(json_decode($row["subject"], true) as $subject){echo $subject['sname']; if($len != $i){echo ", ";} $i++; } ?></td>
                     <td>
                       <a href="edit-staff.php?id=<?php echo $row["id"]; ?>">Edit</a> | <a
                         href="?deleteid=<?php echo $row["id"]; ?>">Delete</a>

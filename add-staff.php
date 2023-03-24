@@ -39,7 +39,7 @@ if(isset($_POST['staff_id'])){
       "scheme" => $_POST["scheme_4"],
     ),
   );
-  $query = "INSERT INTO `staff_details`(`staff_id`, `staff_name`, `designation`, `subject`) VALUES ('".$_POST['staff_id']."','".$_POST['staff_name']."','".$_POST['designation']."','".json_encode($subject)."')";
+  $query = "INSERT INTO `staff_details`(`staff_id`, `staff_name`, `designation`, `bcode`, `subject`) VALUES ('".$_POST['staff_id']."','".$_POST['staff_name']."','".$_POST['designation']."','".$_POST['bcode']."','".json_encode($subject)."')";
   $con = mysqli_connect("localhost","root","","stu-project");
   mysqli_query($con, $query);
   $successMessage = "Record Added";
@@ -105,6 +105,17 @@ if(isset($_POST['staff_id'])){
               <div class="mb-3">
                 <label for="designation" class="form-label">Designation</label>
                 <input class="form-control" id="designation" type="text" name="designation" />
+              </div>
+              <div class="mb-3">
+                <label for="bcode" class="form-label">Branch Code</label>
+                <select class="form-control" id="bcode" name="bcode">
+                  <option value="">Select</option>
+                  <option value="1010">1010</option>
+                  <option value="1020">1020</option>
+                  <option value="1030">1030</option>
+                  <option value="1040">1040</option>
+                  <option value="1052">1052</option>
+                </select>
               </div>
               <div class="mb-3">
                 <label for="subject" class="form-label">Search Subject</label>
@@ -282,6 +293,7 @@ if(isset($_POST['staff_id'])){
       $(`#sname_${id}`).val("");
       $(`#scode_${id}`).val("");
       $(`#sem_${id}`).val("");
+      $(`#bcode_${id}`).val("");
       $(`#year_${id}`).val("");
       $(`#scheme_${id}`).val("");
     })
