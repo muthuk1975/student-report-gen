@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 29, 2023 at 10:40 AM
+-- Generation Time: Mar 29, 2023 at 12:26 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -106,7 +106,9 @@ CREATE TABLE `mark_details` (
 --
 
 INSERT INTO `mark_details` (`id`, `uniqueid`, `regno`, `stname`, `bcode`, `bname`, `sem`, `sub_1`, `subcode_1`, `sub_2`, `subcode_2`, `sub_3`, `subcode_3`, `sub_4`, `subcode_4`, `sub_5`, `subcode_5`, `mark_1`, `mark_2`, `mark_3`, `mark_4`, `mark_5`, `total`, `result`, `m_per`, `att_per`, `att_date`, `e_type`, `month`, `year`, `remarks`) VALUES
-(1, '21502408_1052_4_Model_2023', 21502408, 'ARJUN.B', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 50, 52, 45, 47, 0, 194, 'PASS', 49, 87, '2023-03-28', 'Model', 'April', 2023, '');
+(1, '21502408_1052_4_Model_2023', 21502408, 'ARJUN.B', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 50, 52, 45, 47, 0, 194, 'PASS', 49, 87, '2023-03-28', 'Model', 'April', 2023, ''),
+(13, '21502409_1052_3_Model_2022', 21502409, 'ARTHI.R', 1052, 'CSE', 3, 'Basics of Electrical and Electronics Eng', 4052310, 'Operating System', 4052320, 'C Programming and Data structures', 4052330, '', 0, '', 0, 45, 65, 48, 0, 0, 158, 'PASS', 53, 78, '2023-03-30', 'Model', 'May', 2022, ''),
+(14, '21502409_1052_1_Model_2022', 21502409, 'ARTHI.R', 1052, 'CSE', 1, 'Communicative English - I', 40011, 'Engineering Mathematics - I', 40012, 'Engineering Physics - I', 40013, 'Engineering Chemistry - I', 40014, 'Engineering Graphics - I', 40015, 15, 26, 26, 65, -1, 132, 'FAIL', 26, 54, '2023-03-16', 'Model', 'May', 2022, '');
 
 -- --------------------------------------------------------
 
@@ -128,8 +130,9 @@ CREATE TABLE `staff_details` (
 --
 
 INSERT INTO `staff_details` (`id`, `staff_id`, `staff_name`, `designation`, `bcode`, `subject`) VALUES
-(1, '101', 'Staff1', 'Lecturer', 1052, '[{\"scode\":\"4052410\",\"sname\":\"Computer Architecture\",\"bcode\":\"1052\",\"sem\":\"4\",\"year\":\"2\",\"scheme\":\"N\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"}]'),
-(2, '102', 'Staff2', 'HOD', 1052, '[{\"scode\":\"4052430\",\"sname\":\"Object Oriented Programming with Java\",\"bcode\":\"1052\",\"sem\":\"4\",\"year\":\"2\",\"scheme\":\"N\"},{\"scode\":\"4052620\",\"sname\":\"Computer Networks and Security\",\"bcode\":\"1052\",\"sem\":\"6\",\"year\":\"3\",\"scheme\":\"N\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"}]');
+(3, '101', 'Staff1', 'Lecturer', 1052, '[{\"scode\":\"40011\",\"sname\":\"Communicative English - I\",\"bcode\":\"1052\",\"sem\":\"1\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"40021\",\"sname\":\"Communicative English - II\",\"bcode\":\"1052\",\"sem\":\"2\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"},{\"scode\":\"\",\"sname\":\"\",\"bcode\":\"\",\"sem\":\"\",\"year\":\"\",\"scheme\":\"\"}]'),
+(4, '102', 'Staff2', 'Lecturer', 1052, '[{\"scode\":\"40012\",\"sname\":\"Engineering Mathematics - I\",\"bcode\":\"1052\",\"sem\":\"1\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"40022\",\"sname\":\"Engineering Mathematics - II\",\"bcode\":\"1052\",\"sem\":\"2\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"40013\",\"sname\":\"Engineering Physics - I\",\"bcode\":\"1052\",\"sem\":\"1\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"40023\",\"sname\":\"Engineering Physics - II\",\"bcode\":\"1052\",\"sem\":\"2\",\"year\":\"1\",\"scheme\":\"N\"}]'),
+(5, '103', 'Staff3', 'Lecturer', 1052, '[{\"scode\":\"40014\",\"sname\":\"Engineering Chemistry - I\",\"bcode\":\"1052\",\"sem\":\"1\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"40024\",\"sname\":\"Engineering Chemistry - II\",\"bcode\":\"1052\",\"sem\":\"2\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"40015\",\"sname\":\"Engineering Graphics - I\",\"bcode\":\"1052\",\"sem\":\"1\",\"year\":\"1\",\"scheme\":\"N\"},{\"scode\":\"40025\",\"sname\":\"Engineering Graphics - II\",\"bcode\":\"1052\",\"sem\":\"2\",\"year\":\"1\",\"scheme\":\"N\"}]');
 
 -- --------------------------------------------------------
 
@@ -337,28 +340,24 @@ INSERT INTO `sub_details` (`id`, `scode`, `sname`, `bcode`, `sem`, `year`, `sche
 
 CREATE TABLE `timetable_details` (
   `id` int(11) NOT NULL,
+  `unique_id` varchar(200) NOT NULL,
   `day` text NOT NULL,
-  `hour` int(11) NOT NULL,
-  `hall_name` text NOT NULL,
-  `staff_name` text NOT NULL,
-  `subject` text NOT NULL,
   `bcode` int(11) NOT NULL,
   `sem` int(11) NOT NULL,
-  `year` int(11) NOT NULL
+  `year` int(11) NOT NULL,
+  `day_details` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `timetable_details`
 --
 
-INSERT INTO `timetable_details` (`id`, `day`, `hour`, `hall_name`, `staff_name`, `subject`, `bcode`, `sem`, `year`) VALUES
-(1, 'Monday', 1, 'LH1', 'Staff1', '4052410', 1052, 1, 2023),
-(2, 'Monday', 2, 'LH1', 'Staff1', '4052410', 1052, 1, 2023),
-(3, 'Monday', 3, 'LH1', 'Staff2', '4052430', 1052, 1, 2023),
-(4, 'Monday', 4, 'LH1', 'Staff2', '4052430', 1052, 1, 2023),
-(5, 'Monday', 5, 'LH1', 'Staff2', '4052620', 1052, 1, 2023),
-(6, 'Monday', 6, 'LH1', 'Staff2', '4052620', 1052, 1, 2023),
-(7, 'Monday', 7, 'LH1', 'Staff2', '4052620', 1052, 1, 2023);
+INSERT INTO `timetable_details` (`id`, `unique_id`, `day`, `bcode`, `sem`, `year`, `day_details`) VALUES
+(30, 'Monday_1052_1_2023', 'Monday', 1052, 1, 2023, '{\"1\":{\"hour\":1,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"2\":{\"hour\":2,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"},\"3\":{\"hour\":3,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"},\"4\":{\"hour\":4,\"staff\":\"Staff3\",\"subject\":\"Engineering Chemistry - I\",\"hall\":\"LH1\"},\"5\":{\"hour\":5,\"staff\":\"Staff3\",\"subject\":\"Engineering Graphics - I\",\"hall\":\"LH4\"},\"6\":{\"hour\":6,\"staff\":\"Staff3\",\"subject\":\"Engineering Graphics - I\",\"hall\":\"LH4\"},\"7\":{\"hour\":7,\"staff\":\"Staff3\",\"subject\":\"Engineering Graphics - I\",\"hall\":\"LH4\"}}'),
+(31, 'Tuesday_1052_1_2023', 'Tuesday', 1052, 1, 2023, '{\"1\":{\"hour\":1,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"},\"2\":{\"hour\":2,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"},\"3\":{\"hour\":3,\"staff\":\"Staff3\",\"subject\":\"Engineering Chemistry - I\",\"hall\":\"LH1\"},\"4\":{\"hour\":4,\"staff\":\"Staff3\",\"subject\":\"Engineering Chemistry - I\",\"hall\":\"LH1\"},\"5\":{\"hour\":5,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"6\":{\"hour\":6,\"staff\":\"Staff2\",\"subject\":\"Engineering Physics - I\",\"hall\":\"LH1\"},\"7\":{\"hour\":7,\"staff\":\"Staff2\",\"subject\":\"Engineering Physics - I\",\"hall\":\"LH1\"}}'),
+(32, 'Wednesday_1052_1_2023', 'Wednesday', 1052, 1, 2023, '{\"1\":{\"hour\":1,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"2\":{\"hour\":2,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"3\":{\"hour\":3,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"4\":{\"hour\":4,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"5\":{\"hour\":5,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"},\"6\":{\"hour\":6,\"staff\":\"Staff2\",\"subject\":\"Engineering Physics - I\",\"hall\":\"LH1\"},\"7\":{\"hour\":7,\"staff\":\"Staff3\",\"subject\":\"Engineering Chemistry - I\",\"hall\":\"LH1\"}}'),
+(33, 'Thursday_1052_1_2023', 'Thursday', 1052, 1, 2023, '{\"1\":{\"hour\":1,\"staff\":\"Staff3\",\"subject\":\"Engineering Graphics - I\",\"hall\":\"LH4\"},\"2\":{\"hour\":2,\"staff\":\"Staff3\",\"subject\":\"Engineering Graphics - I\",\"hall\":\"LH4\"},\"3\":{\"hour\":3,\"staff\":\"Staff3\",\"subject\":\"Engineering Graphics - I\",\"hall\":\"LH4\"},\"4\":{\"hour\":4,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"5\":{\"hour\":5,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"},\"6\":{\"hour\":6,\"staff\":\"Staff2\",\"subject\":\"Engineering Physics - I\",\"hall\":\"LH1\"},\"7\":{\"hour\":7,\"staff\":\"Staff3\",\"subject\":\"Engineering Chemistry - I\",\"hall\":\"LH1\"}}'),
+(34, 'Friday_1052_1_2023', 'Friday', 1052, 1, 2023, '{\"1\":{\"hour\":1,\"staff\":\"Staff1\",\"subject\":\"Communicative English - I\",\"hall\":\"LH1\"},\"2\":{\"hour\":2,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"},\"3\":{\"hour\":3,\"staff\":\"Staff3\",\"subject\":\"Engineering Chemistry - I\",\"hall\":\"LH1\"},\"4\":{\"hour\":4,\"staff\":\"Staff2\",\"subject\":\"Engineering Physics - I\",\"hall\":\"LH1\"},\"5\":{\"hour\":5,\"staff\":\"Staff3\",\"subject\":\"Engineering Chemistry - I\",\"hall\":\"LH1\"},\"6\":{\"hour\":6,\"staff\":\"Staff2\",\"subject\":\"Engineering Physics - I\",\"hall\":\"LH1\"},\"7\":{\"hour\":7,\"staff\":\"Staff2\",\"subject\":\"Engineering Mathematics - I\",\"hall\":\"LH1\"}}');
 
 --
 -- Indexes for dumped tables
@@ -406,7 +405,8 @@ ALTER TABLE `sub_details`
 -- Indexes for table `timetable_details`
 --
 ALTER TABLE `timetable_details`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `unique_id` (`unique_id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -428,13 +428,13 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `mark_details`
 --
 ALTER TABLE `mark_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `staff_details`
 --
 ALTER TABLE `staff_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `sub_details`
@@ -446,7 +446,7 @@ ALTER TABLE `sub_details`
 -- AUTO_INCREMENT for table `timetable_details`
 --
 ALTER TABLE `timetable_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
