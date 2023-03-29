@@ -86,7 +86,18 @@ if(isset($_REQUEST['sem'])){
                 </div>
                 <div class="col mb-3">
                   <label for="year" class="form-label">Year</label>
-                  <input class="form-control" id="year" name="year" type="number" value="<?php echo $_REQUEST["year"] ?>" />
+                  <select class="form-control" id="year" type="text" name="year">
+                    <option value="">Choose an option</option>
+                    <option value="2022"<?php if($_REQUEST["year"]=="2022"){echo " selected";} ?>>2022</option>
+                    <option value="2023"<?php if($_REQUEST["year"]=="2023"){echo " selected";} ?>>2023</option>
+                    <option value="2024"<?php if($_REQUEST["year"]=="2024"){echo " selected";} ?>>2024</option>
+                    <option value="2025"<?php if($_REQUEST["year"]=="2025"){echo " selected";} ?>>2025</option>
+                    <option value="2026"<?php if($_REQUEST["year"]=="2026"){echo " selected";} ?>>2026</option>
+                    <option value="2027"<?php if($_REQUEST["year"]=="2027"){echo " selected";} ?>>2027</option>
+                    <option value="2028"<?php if($_REQUEST["year"]=="2028"){echo " selected";} ?>>2028</option>
+                    <option value="2029"<?php if($_REQUEST["year"]=="2029"){echo " selected";} ?>>2029</option>
+                    <option value="2030"<?php if($_REQUEST["year"]=="2030"){echo " selected";} ?>>2030</option>
+                  </select>
                 </div>
               </div>
               <div>
