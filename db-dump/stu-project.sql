@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 24, 2023 at 11:55 AM
+-- Generation Time: Mar 29, 2023 at 10:40 AM
 -- Server version: 10.4.27-MariaDB
--- PHP Version: 8.0.25
+-- PHP Version: 8.2.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -39,7 +39,7 @@ CREATE TABLE `hall_details` (
 INSERT INTO `hall_details` (`id`, `hall_name`) VALUES
 (1, 'LH1'),
 (2, 'LH2'),
-(3, 'LH3');
+(3, 'LH4');
 
 -- --------------------------------------------------------
 
@@ -69,6 +69,7 @@ INSERT INTO `login` (`id`, `user`, `password`, `type`) VALUES
 
 CREATE TABLE `mark_details` (
   `id` int(11) NOT NULL,
+  `uniqueid` varchar(200) NOT NULL,
   `regno` int(11) NOT NULL,
   `stname` varchar(40) NOT NULL,
   `bcode` int(11) NOT NULL,
@@ -104,65 +105,8 @@ CREATE TABLE `mark_details` (
 -- Dumping data for table `mark_details`
 --
 
-INSERT INTO `mark_details` (`id`, `regno`, `stname`, `bcode`, `bname`, `sem`, `sub_1`, `subcode_1`, `sub_2`, `subcode_2`, `sub_3`, `subcode_3`, `sub_4`, `subcode_4`, `sub_5`, `subcode_5`, `mark_1`, `mark_2`, `mark_3`, `mark_4`, `mark_5`, `total`, `result`, `m_per`, `att_per`, `att_date`, `e_type`, `month`, `year`, `remarks`) VALUES
-(1, 777, 'MUTHU K', 1052, 'CSE', 3, 'C PROGRAMMING', 35233, 'Basics of Electrical and Electronics Eng', 35231, 'C PROGRAMMING', 35233, 'Basics of Electrical and Electronics Eng', 35231, '', 0, 25, 35, 36, 34, 0, 130, 'FAIL', 0, 75, '2023-02-04', 'Internal Assesment Test 1', 'February', 2021, 'GOOD'),
-(2, 772, 'JANA', 1030, 'EEE', 3, 'EDC', 33031, 'EDC', 33031, 'EDC', 33031, 'EDC', 33031, '', 0, 45, 12, 36, 45, 0, 138, 'FAIL', 35, 78, '2023-02-09', 'IA1', 'February', 2023, 'GOOD'),
-(3, 777, 'MUTHU K', 1052, 'CSE', 3, 'C PROGRAMMING', 35233, 'C PROGRAMMING', 35233, 'C PROGRAMMING', 35233, 'C PROGRAMMING', 35233, '', 0, 45, 25, 45, 44, 0, 159, 'PASS', 40, 89, '2023-02-15', 'IA1', 'February', 2023, 'GOOD'),
-(4, 701, 'MUTHU K', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 44, 25, 48, 46, 0, 163, 'FAIL', 0, 89, '2023-02-10', '', '', 0, 'தங்கள் கல்வி நிலைய  அறிய 1-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவம் .'),
-(5, 701, 'MUTHU K', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 46, 35, 39, 0, 165, 'PASS', 41, 46, '2023-02-08', 'IA1', 'February', 2023, 'வருகை பதிவு 80% குறைவாக இருந்தால் வாரிய தேர்வு எழுத இயலாது என்பதை தெரிவிக்கின்றோம் ,துறை தலைவரை நேரில் அனுகவும் .'),
-(6, 21590881, 'NIVASHINI M', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 48, 45, 48, 48, 0, 189, 'PASS', 47, 85, '2023-02-28', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(7, 21502424, 'SUBASHINI S', 1052, 'CSE', 6, 'Computer Networks and Security', 4052620, 'Computer Hardware and Servicing', 4052610, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Networks and Security', 4052620, '', 0, 33, 33, 45, 33, 0, 144, 'PASS', 36, 90, '2023-02-22', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(8, 22502599, 'ABITHA.K', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 42, 25, 49, 31, 0, 147, 'PASS', 37, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(9, 22502600, 'ASHA.G', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 18, 23, 28, 20, 0, 89, 'FAIL', 22, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(10, 22502601, 'DHIVYASRI.G', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 42, 24, 49, 39, 0, 154, 'PASS', 39, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(11, 22502602, 'GURU VISHNU.C', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 15, 10, 32, 24, 0, 81, 'FAIL', 20, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(12, 22502603, 'HAVAMA.A', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 37, 17, 47, 33, 0, 134, 'FAIL', 34, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(13, 22502604, 'KEERTHANA.S', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 29, 18, 36, 17, 0, 100, 'FAIL', 25, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(14, 22502605, 'REJINA.A', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 37, 25, 34, 30, 0, 126, 'PASS', 32, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(15, 22502606, 'SANJAY.R', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 16, 5, 20, 6, 0, 47, 'FAIL', 12, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(16, 22502607, 'SURESH.S', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, '', 0, 15, 4, 35, 24, 0, 78, 'FAIL', 20, 0, '', 'IA1', 'February', 2023, ''),
-(17, 22502608, 'YUVARAJ.V', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 21, 14, 24, 20, 0, 79, 'FAIL', 20, 0, '', 'IA1', 'February', -2023, ''),
-(18, 22503542, 'MAGESH.P', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 27, 20, 24, 22, 0, 93, 'PASS', 23, 0, '', 'IA1', 'February', 2023, ''),
-(19, 22591191, 'FELIX ROSAN.A', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 9, 0, 11, 1, 0, 21, 'FAIL', 5, 0, '', 'IA1', 'February', 2023, ''),
-(20, 22591192, 'GANGA.N', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 29, 25, 30, 23, 0, 107, 'PASS', 27, 0, '', 'IA1', 'February', 2023, ''),
-(21, 22591194, 'KANNADASN.S', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 27, 16, 35, 23, 0, 101, 'FAIL', 25, 0, '', 'IA1', 'February', 2023, ''),
-(22, 22591195, 'KEERTHIGA.K', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 26, 24, 43, 29, 0, 122, 'PASS', 31, 0, '', 'IA1', 'February', 2023, ''),
-(23, 22591196, 'LAVANYA.R', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 40, 21, 35, 0, 0, 96, 'FAIL', 24, 0, '', 'IA1', 'February', 2023, ''),
-(24, 22591198, 'PRAVEENRAM.T', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 33, 20, 39, 24, 0, 116, 'PASS', 29, 0, '', 'IA1', 'February', 2023, ''),
-(25, 22591199, 'SAVARIMALAIIYYAPPAN.B', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 26, 26, 20, 20, 0, 92, 'PASS', 23, 0, '', 'IA1', 'February', 2023, ''),
-(26, 22591200, 'SIVAGANESH.S', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 27, 27, 30, 21, 0, 105, 'PASS', 26, 0, '', 'IA1', 'February', 2023, ''),
-(27, 22591201, 'SUBASHINI.A', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 25, 0, 39, 13, 0, 77, 'FAIL', 19, 0, '', 'IA1', 'February', 2023, ''),
-(28, 21502408, 'ARJUN.B', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 0, 2, 20, 0, 0, 22, 'FAIL', 6, 0, '', 'IA1', 'February', 2023, ''),
-(29, 21502409, 'ARTHI.R', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 40, 44, 48, 0, 0, 132, 'FAIL', 33, 0, '', 'IA1', 'February', 2023, ''),
-(30, 21502410, 'ARUL JOTHI.P', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 23, 5, 23, 0, 0, 51, 'FAIL', 13, 0, '', 'IA1', 'February', 2023, ''),
-(31, 21502412, 'ASHOK KUMAR.B', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 4, 1, 13, 0, 0, 18, 'FAIL', 5, 0, '', 'IA1', 'February', 2023, ''),
-(32, 21502414, 'JALIL FASITH.J', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 25, 0, 24, 0, 0, 49, 'FAIL', 12, 0, '', 'IA1', 'February', 2023, ''),
-(33, 21502415, 'JOTHI.K', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 32, 44, 48, 0, 0, 124, 'FAIL', 31, 0, '', 'IA1', 'February', 2023, ''),
-(34, 21502417, 'NATHESHA.J', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 26, 16, 30, 0, 0, 72, 'FAIL', 18, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(35, 21502418, 'NAVEENKUMAR.M', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 15, 3, 22, 0, 0, 40, 'FAIL', 10, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(36, 21502424, 'SUBASHINI S', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 33, 33, 45, 0, 0, 111, 'FAIL', 28, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(37, 21502425, 'SYED RASOOL.S', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 11, 0, 7, 0, 0, 18, 'FAIL', 5, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(38, 21502427, 'THAMIZHVALAVAN.A', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 16, 14, 20, 0, 0, 50, 'FAIL', 13, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(39, 21502428, 'THIYAGARAJAN.GRS', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 0, 0, 0, 0, 0, 0, 'FAIL', 0, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(40, 21502429, 'VASANTH.E', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 19, 0, 12, 0, 0, 31, 'FAIL', 8, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(41, 21590879, 'DAISY RANI.A', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 44, 46, 47, 0, 0, 137, 'FAIL', 34, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(42, 21590808, 'MOHAMED LUKMAN.S', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 26, 15, 22, 0, 0, 63, 'FAIL', 16, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(43, 21590881, 'NIVASHINI M', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 48, 45, 48, 0, 0, 141, 'FAIL', 35, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(44, 21590878, 'ARUN.M', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 0, 2, 14, 0, 0, 16, 'FAIL', 4, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(45, 21590877, 'AKASH.A', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, 'Computer Hardware and Servicing', 4052610, '', 0, 3, 2, 8, 0, 0, 13, 'FAIL', 3, 0, '', 'IA1', 'February', 2023, 'தங்கள்  மகள்  கல்வி நிலைய  அறிய வருகின்ற 14-03-2023 அன்று துறை தலைவரை நேரில் சந்திக்கவும் '),
-(46, 21502409, 'ARTHI.R', 1052, 'CSE', 6, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 34, 47, 40, 0, 166, 'FAIL', 0, 89, '2023-03-21', '', '', 0, 'good'),
-(47, 21502408, 'ARJUN.B', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 23, 42, 37, -1, 147, 'PASS', 37, 89, '2023-03-15', 'IA1', 'January', 2023, 'good'),
-(48, 21502408, 'ARJUN.B', 1052, 'CSE', 1, 'Communicative English - I', 40011, 'Engineering Mathematics - I', 40012, 'Engineering Physics - I', 40013, 'Engineering Chemistry - I', 40014, 'Engineering Graphics - I', 40015, 25, 40, 37, 41, 28, 171, 'PASS', 34, 87, '2023-03-17', 'IA1', 'February', 2023, 'Good'),
-(49, 21502409, 'ARTHI.R', 1052, 'CSE', 2, 'Communicative English - II', 40021, 'Engineering Mathematics - II', 40022, 'Engineering Physics - II', 40023, 'Engineering Chemistry - II', 40024, 'Engineering Graphics - II', 40025, -1, 45, 56, 25, 25, 210, 'FAIL', 42, 87, '2023-03-17', 'Model', 'March', 2023, ''),
-(50, 21502409, 'ARTHI.R', 1052, 'CSE', 6, 'Computer Hardware and Servicing', 4052610, 'Computer Networks and Security', 4052620, 'Elective Theory-II - Multimedia Systems', 4052632, '', 0, '', 0, 45, 49, 46, -1, -1, 140, 'FAIL', 0, 95, '2023-03-01', '', '', 0, 'Good'),
-(51, 21502409, 'ARTHI.R', 1052, 'CSE', 5, 'Python Programming', 4052510, 'Cloud Computing and Internet of Things', 4052520, 'Elective Theory-I -Component Based Techn', 4052531, '', 0, '', 0, 24, 46, 49, -1, -1, 119, 'FAIL', 0, 89, '2023-03-13', '', '', 0, 'Good'),
-(52, 21502409, 'ARTHI.R', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 45, 46, 49, 46, -1, 186, 'FAIL', 37, 96, '2022-02-06', 'IA1', 'January', 2022, 'Good'),
-(53, 21502409, 'ARTHI.R', 1052, 'CSE', 3, 'Basics of Electrical and Electronics Eng', 4052310, 'Operating System', 4052320, 'C Programming and Data structures', 4052330, '', 0, '', 0, 45, 46, 42, -1, -1, 133, 'FAIL', 27, 89, '2022-08-02', 'IA1', 'August', 2022, 'Good'),
-(54, 21502409, 'ARTHI.R', 1052, 'CSE', 5, 'Python Programming', 4052510, 'Cloud Computing and Internet of Things', 4052520, 'Elective Theory-I -Component Based Techn', 4052531, '', 0, '', 0, 45, 46, 49, -1, -1, 140, 'FAIL', 28, 89, '2023-03-06', 'IA1', 'August', 2022, 'good'),
-(55, 21502409, 'ARTHI.R', 1052, 'CSE', 5, 'Python Programming', 4052510, 'Cloud Computing and Internet of Things', 4052520, 'Elective Theory-I -Component Based Techn', 4052531, '', 0, '', 0, 25, 23, 24, -1, -1, 72, 'FAIL', 14, 88, '2023-03-08', 'IA1', 'August', 2022, 'good'),
-(56, 21502415, 'JOTHI.K', 1052, 'CSE', 3, 'Basics of Electrical and Electronics Eng', 4052310, 'Operating System', 4052320, 'C Programming and Data structures', 4052330, '', 0, '', 0, 34, 45, 46, -1, -1, 125, 'FAIL', 25, 98, '2023-03-08', 'IA1', 'August', 2023, 'good'),
-(57, 21502415, 'JOTHI.K', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 12, 45, 23, 46, -1, 126, 'FAIL', 25, 78, '2023-03-06', 'IA1', 'February', 2022, 'good'),
-(60, 21502408, 'ARJUN.B', 1052, 'CSE', 3, 'Basics of Electrical and Electronics Eng', 4052310, 'Operating System', 4052320, 'C Programming and Data structures', 4052330, '', 0, '', 0, 23, 23, 25, 0, 0, 71, 'PASS', 24, 25, '2023-03-24', 'IA1', 'March', 2023, '');
+INSERT INTO `mark_details` (`id`, `uniqueid`, `regno`, `stname`, `bcode`, `bname`, `sem`, `sub_1`, `subcode_1`, `sub_2`, `subcode_2`, `sub_3`, `subcode_3`, `sub_4`, `subcode_4`, `sub_5`, `subcode_5`, `mark_1`, `mark_2`, `mark_3`, `mark_4`, `mark_5`, `total`, `result`, `m_per`, `att_per`, `att_date`, `e_type`, `month`, `year`, `remarks`) VALUES
+(1, '21502408_1052_4_Model_2023', 21502408, 'ARJUN.B', 1052, 'CSE', 4, 'Computer Architecture', 4052410, 'Web design and Programming', 4052420, 'Object Oriented Programming with Java', 4052430, 'RDBMS', 4052440, '', 0, 50, 52, 45, 47, 0, 194, 'PASS', 49, 87, '2023-03-28', 'Model', 'April', 2023, '');
 
 -- --------------------------------------------------------
 
@@ -212,7 +156,7 @@ CREATE TABLE `student_details` (
 --
 
 INSERT INTO `student_details` (`regno`, `stname`, `gender`, `bcode`, `bname`, `add1`, `add2`, `add3`, `stu_phone`, `p_name`, `p_phone`) VALUES
-(21502408, 'ARJUN.B', 'Male', 1052, 'CSE', '', '', '', 0, '', 0),
+(21502408, 'ARJUN.B', 'Male', 1052, 'CSE', '', '', '', 9790227078, '', 8796543217),
 (21502409, 'ARTHI.R', 'Female', 1052, 'CSE', 'V.O.C STREET ', 'SARAVANAPURAM', 'NELLIKUPPAM', 8015220514, 'RAJA.D', 7449209085),
 (21502410, 'ARUL JOTHI.P', 'Male', 1052, 'CSE', '', '', '', 0, '', 0),
 (21502412, 'ASHOK KUMAR.B', 'Male', 1052, 'CSE', '', '', '', 0, '', 0),
@@ -437,7 +381,7 @@ ALTER TABLE `login`
 --
 ALTER TABLE `mark_details`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `id` (`id`);
+  ADD UNIQUE KEY `uniqueid` (`uniqueid`);
 
 --
 -- Indexes for table `staff_details`
@@ -484,7 +428,7 @@ ALTER TABLE `login`
 -- AUTO_INCREMENT for table `mark_details`
 --
 ALTER TABLE `mark_details`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=61;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `staff_details`
