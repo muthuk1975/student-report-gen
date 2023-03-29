@@ -42,9 +42,9 @@ if(isset($_REQUEST["id"])){
         "scheme" => $_POST["scheme_4"],
       ),
     );
-    $query = "UPDATE `staff_details` SET (`staff_id` = '".$_POST['staff_id']."', `staff_name` = '".$_POST['staff_name']."', `designation` = '".$_POST['designation']."', `bcode` = '".$_POST['bcode']."', `subject` = '".json_encode($subject)."' WHERE `id` = '".$_REQUEST['id']."'";
+    $query = "UPDATE `staff_details` SET `staff_id` = '".$_POST['staff_id']."', `staff_name` = '".$_POST['staff_name']."', `designation` = '".$_POST['designation']."', `bcode` = '".$_POST['bcode']."', `subject` = '".json_encode($subject)."' WHERE `id` = '".$_REQUEST['id']."'";
     mysqli_query($con, $query);
-    $successMessage = "Record Added";
+    $successMessage = "Record Updated";
   }
   $selectQuery = "SELECT * FROM `staff_details` WHERE `id` = '".$_REQUEST['id']."'";
   $result = mysqli_query($con, $selectQuery);

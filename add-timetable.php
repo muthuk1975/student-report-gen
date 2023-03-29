@@ -11,45 +11,94 @@ $hallResult = mysqli_query($con,$hallQuery);
 $staffQuery = "SELECT * FROM `staff_details`";
 $staffResult = mysqli_query($con,$staffQuery);
 if(isset($_POST['sem'])){
-  $monIndex = 0;
-  $monHour = 1;
-  foreach($_POST["hall_monday"] as $hall){
-    $mondayQuery = "INSERT INTO `timetable_details`(`day`, `hour`, `hall_name`, `staff_name`, `subject`, `bcode`, `sem`, `year`) VALUES ('Monday','".$hour."','$hall','".$_POST['staff_monday'][$index]."','".$_POST['subject_monday'][$index]."','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."')";
+  if(isset($_POST["subject_monday"])){
+    $mondaySubjects = array();
+    $monIndex = 0;
+    $monHour = 1;
+    foreach($_POST["hall_monday"] as $hall){
+      $mondaySubjects[$monHour] = array(
+        "hour" => $monHour,
+        "staff" => $_POST['staff_monday'][$monIndex],
+        "subject" => $_POST['subject_monday'][$monIndex],
+        "hall" => $hall
+      );
+      $monIndex++;
+      $monHour++;
+    }
+    $mondayQuery = "INSERT INTO `timetable_details`(`unique_id`, `day`, `bcode`, `sem`, `year`, `day_details`) VALUES ('Monday_".$_POST["bcode"]."_".$_POST["sem"]."_".$_POST["year"]."','Monday','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."', '".json_encode($mondaySubjects)."')";
     mysqli_query($con, $mondayQuery);
-    $monIndex++;
-    $monHour++;
   }
-  $tueIndex = 0;
-  $tueHour = 1;
-  foreach($_POST["hall_tuesday"] as $hall){
-    $tuesdayQuery = "INSERT INTO `timetable_details`(`day`, `hour`, `hall_name`, `staff_name`, `subject`, `bcode`, `sem`, `year`) VALUES ('Tuesday','".$hour."','$hall','".$_POST['staff_tuesday'][$index]."','".$_POST['subject_tuesday'][$index]."','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."')";
+  
+  if(isset($_POST["subject_tuesday"])){
+    $tuesdaySubjects = array();
+    $tueIndex = 0;
+    $tueHour = 1;
+    foreach($_POST["hall_tuesday"] as $hall){
+      $tuesdaySubjects[$tueHour] = array(
+        "hour" => $tueHour,
+        "staff" => $_POST['staff_tuesday'][$tueIndex],
+        "subject" => $_POST['subject_tuesday'][$tueIndex],
+        "hall" => $hall
+      );
+      $tueIndex++;
+      $tueHour++;
+    }
+    $tuesdayQuery = "INSERT INTO `timetable_details`(`unique_id`, `day`, `bcode`, `sem`, `year`, `day_details`) VALUES ('Tuesday_".$_POST["bcode"]."_".$_POST["sem"]."_".$_POST["year"]."','Tuesday','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."', '".json_encode($tuesdaySubjects)."')";
     mysqli_query($con, $tuesdayQuery);
-    $tueIndex++;
-    $tueHour++;
   }
-  $wedIndex = 0;
-  $wedHour = 1;
-  foreach($_POST["hall_wednesday"] as $hall){
-    $wednesdayQuery = "INSERT INTO `timetable_details`(`day`, `hour`, `hall_name`, `staff_name`, `subject`, `bcode`, `sem`, `year`) VALUES ('Wednesday','".$hour."','$hall','".$_POST['staff_wednesday'][$index]."','".$_POST['subject_wednesday'][$index]."','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."')";
+  
+  if(isset($_POST["subject_wednesday"])){
+    $wednesdaySubjects = array();
+    $wedIndex = 0;
+    $wedHour = 1;
+    foreach($_POST["hall_wednesday"] as $hall){
+      $wednesdaySubjects[$wedHour] = array(
+        "hour" => $wedHour,
+        "staff" => $_POST['staff_wednesday'][$wedIndex],
+        "subject" => $_POST['subject_wednesday'][$wedIndex],
+        "hall" => $hall
+      );
+      $wedIndex++;
+      $wedHour++;
+    }
+    $wednesdayQuery = "INSERT INTO `timetable_details`(`unique_id`, `day`, `bcode`, `sem`, `year`, `day_details`) VALUES ('Wednesday_".$_POST["bcode"]."_".$_POST["sem"]."_".$_POST["year"]."','Wednesday','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."', '".json_encode($wednesdaySubjects)."')";
     mysqli_query($con, $wednesdayQuery);
-    $wedIndex++;
-    $wedHour++;
   }
-  $thuIndex = 0;
-  $thuHour = 1;
-  foreach($_POST["hall_thursday"] as $hall){
-    $thursdayQuery = "INSERT INTO `timetable_details`(`day`, `hour`, `hall_name`, `staff_name`, `subject`, `bcode`, `sem`, `year`) VALUES ('Thursday','".$hour."','$hall','".$_POST['staff_thursday'][$index]."','".$_POST['subject_thursday'][$index]."','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."')";
+
+  if(isset($_POST["subject_thursday"])){
+    $thursdaySubjects = array();
+    $thuIndex = 0;
+    $thuHour = 1;
+    foreach($_POST["hall_thursday"] as $hall){
+      $thursdaySubjects[$thuHour] = array(
+        "hour" => $thuHour,
+        "staff" => $_POST['staff_thursday'][$thuIndex],
+        "subject" => $_POST['subject_thursday'][$thuIndex],
+        "hall" => $hall
+      );
+      $thuIndex++;
+      $thuHour++;
+    }
+    $thursdayQuery = "INSERT INTO `timetable_details`(`unique_id`, `day`, `bcode`, `sem`, `year`, `day_details`) VALUES ('Thursday_".$_POST["bcode"]."_".$_POST["sem"]."_".$_POST["year"]."','Thursday','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."', '".json_encode($thursdaySubjects)."')";
     mysqli_query($con, $thursdayQuery);
-    $thuIndex++;
-    $thuHour++;
   }
-  $friIndex = 0;
-  $friHour = 1;
-  foreach($_POST["hall_friday"] as $hall){
-    $fridayQuery = "INSERT INTO `timetable_details`(`day`, `hour`, `hall_name`, `staff_name`, `subject`, `bcode`, `sem`, `year`) VALUES ('Friday','".$hour."','$hall','".$_POST['staff_friday'][$index]."','".$_POST['subject_friday'][$index]."','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."')";
+
+  if(isset($_POST["subject_friday"])){
+    $fridaySubjects = array();
+    $friIndex = 0;
+    $friHour = 1;
+    foreach($_POST["hall_friday"] as $hall){
+      $fridaySubjects[$friHour] = array(
+        "hour" => $friHour,
+        "staff" => $_POST['staff_friday'][$friIndex],
+        "subject" => $_POST['subject_friday'][$friIndex],
+        "hall" => $hall
+      );
+      $friIndex++;
+      $friHour++;
+    }
+    $fridayQuery = "INSERT INTO `timetable_details`(`unique_id`, `day`, `bcode`, `sem`, `year`, `day_details`) VALUES ('Friday_".$_POST["bcode"]."_".$_POST["sem"]."_".$_POST["year"]."','Friday','".$_POST["bcode"]."','".$_POST["sem"]."','".$_POST["year"]."', '".json_encode($fridaySubjects)."')";
     mysqli_query($con, $fridayQuery);
-    $friIndex++;
-    $friHour++;
   }
   $successMessage = "Record Added";
 }
@@ -886,7 +935,7 @@ if(isset($_POST['sem'])){
       $(this).parent(".mb-3").next(".subject").remove()
       $(newElement).insertAfter($(this).parent('.mb-3'))
       console.log($(this).find(":selected").data("subjects"))
-      $(this).find(":selected").data("subjects").forEach(item => {if(item.sname !== "")$("#"+id).append("<option value='"+item.scode+"'>"+item.sname+"</option>")})
+      $(this).find(":selected").data("subjects").forEach(item => {if(item.sname !== "")$("#"+id).append("<option value='"+item.sname+"'>"+item.sname+"</option>")})
     })
   })
   </script>

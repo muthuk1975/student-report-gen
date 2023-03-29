@@ -9,7 +9,7 @@ if(isset($_REQUEST['term'])){
         $i = 0;
         while($row = mysqli_fetch_assoc($result)){
             $output[$i] = $row;
-            $output[$i]['label'] = $row['sname'];
+            $output[$i]['label'] = $row['sname']." - ".$row['bcode'];
             $i++;
         }
     }

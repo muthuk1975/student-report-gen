@@ -27,7 +27,17 @@
     </li>
     <li class="nav-item">
       <a href="staffs.php" class="nav-link">
-      <i class="bi bi-person-badge"></i> Staffs
+        <i class="bi bi-person-badge"></i> Staffs
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="timetable.php" class="nav-link">
+        <i class="bi bi-calendar-week"></i> Timetable
+      </a>
+    </li>
+    <li class="nav-item">
+      <a href="add-timetable.php" class="nav-link">
+        <i class="bi bi-calendar-plus"></i> Add Timetable
       </a>
     </li>
     <!-- <li class="nav-item">

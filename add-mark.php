@@ -2,6 +2,7 @@
 session_start();
 require("config.php");
 $successMessage = "";
+$errorMessage = "";
 if(!isset($_SESSION["user_id"])){
     header("Location: login.php");
 }
