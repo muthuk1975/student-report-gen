@@ -126,6 +126,11 @@ if(isset($_REQUEST['sem'])){
                   </tbody>
                 </table>
               </div>
+              <div class="row align-items-center justify-content-center dontprint">
+                <div class="col-2">
+                  <button onclick="window.print()" class="btn btn-primary"><i class="bi bi-printer"></i> PRINT</button>
+                </div>
+              </div>
               <?php  endif; ?>
           </div>
         </div>

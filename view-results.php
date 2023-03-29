@@ -67,7 +67,7 @@ if(isset($_POST["regno"])){
         <h1>No Records Found</h1>
         <?php }else{
         while($row = mysqli_fetch_array($result, MYSQLI_ASSOC)){ ?>
-        <h1 class="title mb-3"><?php echo $row['e_type']; ?> Examination - <?php echo $row["month"]; ?> /
+        <h1 class="title mb-3"><?php if($row['e_type'] != "Model" ){if($row["e_type"]=="IA1"){echo "Internal Assesment Test 1";}else{ echo "Internal Assesment Test 2";}} else{echo $row["e_type"]." Examination";} ?> - <?php echo $row["month"]; ?> /
           <?php echo $row["year"]; ?></h1>
         <div class="row mb-1" style="font-size:20px">
           <div class="col-3">

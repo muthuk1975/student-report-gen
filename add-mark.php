@@ -361,6 +361,7 @@ if(isset($_POST['regno'])){
   <script src="https://code.jquery.com/jquery-3.6.3.min.js"
     integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
   <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+  <script src="http://jstepper.emkay.dk/scripts/jquery.jstepper.min.js"></script>
   <script>
   jQuery(document).ready(function($) {
     $("#regno").autocomplete({
@@ -424,6 +425,18 @@ if(isset($_POST['regno'])){
         $("#mark5").attr("readonly",false).val("")
       }
     })
+    $("#e_type").on("change", function(){
+      if($(this).find(":selected").val() === "Model"){
+        $('input[name*="mark"]').jStepper({minValue:-1, maxValue:75, minLength:2});
+      }else{
+        $('input[name*="mark"]').jStepper({minValue:-1, maxValue:50, minLength:2});
+      }
+    });
+    /* $('input[name*="mark"]').on("change", function(){
+      if($(this).val() >"75" && $("#e_type").find(":selected") === "Model"){
+        $(this).val(75);
+      }
+    }) */
     /* $("#sub1,#sub2,#sub3,#sub4").on("change", function() {
       $("#" + $(this).attr("id") + "-code").attr("value", $(this).find(":selected").attr("data-scode"))
     }) */
