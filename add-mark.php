@@ -123,11 +123,15 @@ if(isset($_POST['regno'])){
       $markPercentage = $total / 3;
     }
   }
-  $query = "INSERT INTO `mark_details`(`regno`, `stname`, `bcode`, `bname`, `sem`, `sub_1`, `subcode_1`, `sub_2`, `subcode_2`, `sub_3`, `subcode_3`, `sub_4`, `subcode_4`, `sub_5`, `subcode_5`, `mark_1`, `mark_2`, `mark_3`, `mark_4`, `mark_5`, `total`, `result`, `m_per`, `att_per`, `att_date`, `e_type`, `month`, `year`, `remarks`) VALUES ('".$_POST['regno']."','".$_POST['sname']."','".$_POST['bcode']."','".$_POST['bname']."','".$_POST['sem']."','".$sub1."','".$subcode1."','".$sub2."','".$subcode2."','".$sub3."','".$subcode3."','".$sub4."','".$subcode4."','".$sub5."','".$subcode5."','".$mark1."','".$mark2."','".$mark3."','".$mark4."','".$mark5."','".$total."','".$result."','".$markPercentage."','".$_POST['att_per']."','".$_POST['att_date']."','".$_POST['e_type']."','".$_POST['month']."','".$_POST['year']."', '".$_POST['remarks']."')";
-
-  $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
-  mysqli_query($con, $query);
-  $successMessage = "Record Added";
+  $uniqueid = $_POST["regno"]."_".$_POST["bcode"]."_".$_POST["sem"]."_".$_POST["e_type"]."_".$_POST["year"];
+  $query = "INSERT INTO `mark_details`(`regno`, `uniqueid`, `stname`, `bcode`, `bname`, `sem`, `sub_1`, `subcode_1`, `sub_2`, `subcode_2`, `sub_3`, `subcode_3`, `sub_4`, `subcode_4`, `sub_5`, `subcode_5`, `mark_1`, `mark_2`, `mark_3`, `mark_4`, `mark_5`, `total`, `result`, `m_per`, `att_per`, `att_date`, `e_type`, `month`, `year`, `remarks`) VALUES ('".$_POST['regno']."','".$uniqueid."','".$_POST['sname']."','".$_POST['bcode']."','".$_POST['bname']."','".$_POST['sem']."','".$sub1."','".$subcode1."','".$sub2."','".$subcode2."','".$sub3."','".$subcode3."','".$sub4."','".$subcode4."','".$sub5."','".$subcode5."','".$mark1."','".$mark2."','".$mark3."','".$mark4."','".$mark5."','".$total."','".$result."','".$markPercentage."','".$_POST['att_per']."','".$_POST['att_date']."','".$_POST['e_type']."','".$_POST['month']."','".$_POST['year']."', '".$_POST['remarks']."')";
+  try{
+    $con = mysqli_connect(DB_HOST,DB_USERNAME,DB_PASSWORD,DB_NAME);
+    mysqli_query($con, $query);
+    $successMessage = "Record Added";
+  }catch(mysqli_sql_exception $e){
+    $errorMessage = "Error: ".$e->getMessage();
+  }
 }
 ?>
 <!DOCTYPE html>
@@ -180,6 +184,11 @@ if(isset($_POST['regno'])){
             <?php if($successMessage!==""){ ?>
             <div class="alert alert-success" role="alert">
               <?php echo $successMessage; ?>
+            </div>
+            <?php } ?>
+            <?php if($errorMessage!==""){ ?>
+            <div class="alert alert-danger" role="alert">
+              <?php echo $errorMessage; ?>
             </div>
             <?php } ?>
             <form action="" method="post">

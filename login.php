@@ -1,5 +1,6 @@
 <?php
 session_start();
+require("config.php");
 $errorMessage = "";
 if(isset($_SESSION["user_id"])){
     header("Location: mainpage.php");
